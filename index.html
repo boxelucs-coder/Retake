@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Retake — Tactical Demo Review</title>
+<meta name="description" content="Retake turns your team's match demos into round-by-round tactical review and opponent scouting reports.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0d0f12;
+    --surface: #161a20;
+    --border: #262c35;
+    --text: #e8ebef;
+    --muted: #9aa3ae;
+    --accent: #f5a524;
+    --ct: #5b9cf5;
+    --t: #e8b04a;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+  header { padding: 24px 0; }
+  .logo { font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; }
+  .logo span { color: var(--accent); }
+
+  .hero { padding: 64px 0 56px; }
+  .tag {
+    display: inline-block; font-size: .8rem; font-weight: 600; color: var(--accent);
+    border: 1px solid var(--border); border-radius: 999px; padding: 4px 12px; margin-bottom: 20px;
+  }
+  h1 { font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.1; letter-spacing: -0.03em; margin: 0 0 20px; max-width: 16ch; }
+  .lede { font-size: 1.125rem; color: var(--muted); max-width: 60ch; margin: 0 0 32px; }
+  .btn {
+    display: inline-block; background: var(--accent); color: #111; font-weight: 600;
+    text-decoration: none; padding: 12px 22px; border-radius: 10px;
+  }
+
+  h2 { font-size: 1.5rem; letter-spacing: -0.02em; margin: 0 0 24px; }
+  section { padding: 48px 0; border-top: 1px solid var(--border); }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px; }
+  .card h3 { margin: 0 0 8px; font-size: 1.05rem; }
+  .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+  .dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+
+  .shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+  .shots figure { margin: 0; }
+  .shots img { width: 100%; border-radius: 12px; border: 1px solid var(--border); display: block; }
+  .shots figcaption { color: var(--muted); font-size: .85rem; margin-top: 8px; }
+
+  ol.steps { padding-left: 20px; margin: 0; color: var(--muted); }
+  ol.steps li { margin-bottom: 10px; }
+  ol.steps strong { color: var(--text); }
+
+  footer { padding: 32px 0 48px; border-top: 1px solid var(--border); color: var(--muted); font-size: .85rem; }
+  footer a { color: var(--muted); }
+  .fine { margin-top: 12px; font-size: .78rem; opacity: .8; }
+</style>
+</head>
+<body>
+<header class="wrap">
+  <div class="logo">Re<span>take</span></div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div class="tag">Private testing · launching for teams soon</div>
+    <h1>Know what they'll run before the round starts.</h1>
+    <p class="lede">
+      Retake turns your team's match demos into round-by-round tactical review and opponent
+      scouting reports. See each team's tendencies, how their rounds open, and where you
+      lose rounds. Built for amateur and semi-pro teams that don't have an analyst.
+    </p>
+    <a class="btn" href="mailto:boxelucs@gmail.com">Get in touch</a>
+  </div>
+
+  <section>
+    <h2>What it does</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>2D round viewer</h3>
+        <p>Replay any round from above with smooth playback, live utility, and a whole-round
+          utility plan colour-coded by side.</p>
+      </div>
+      <div class="card">
+        <h3>Opponent scouting</h3>
+        <p>Groups each opponent's rounds by how they open: defaults, rushes, splits, stacks.
+          You see what they tend to run on each map and economy.</p>
+      </div>
+      <div class="card">
+        <h3>Win probability with reasons</h3>
+        <p>A round-by-round win probability that explains itself: which situation cost the
+          round and what changed the odds.</p>
+      </div>
+      <div class="card">
+        <h3>Team review</h3>
+        <p>Flag rounds, leave notes, and review your own play next to the same breakdown
+          you'd get for an opponent.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Screenshots</h2>
+    <div class="shots">
+      <figure>
+        <img src="screenshots/viewer.png" alt="2D round viewer with player positions and utility" onerror="this.closest('figure').remove()">
+        <figcaption>2D viewer with the whole-round utility plan</figcaption>
+      </figure>
+      <figure>
+        <img src="screenshots/scouting.png" alt="Opponent scouting report" onerror="this.closest('figure').remove()">
+        <figcaption>Opponent scouting report</figcaption>
+      </figure>
+      <figure>
+        <img src="screenshots/library.png" alt="Demo library" onerror="this.closest('figure').remove()">
+        <figcaption>Match library</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><strong>Bring your matches.</strong> Upload demos, or link your account so your
+        matches come in automatically. We only fetch matches you played in or are scouting.</li>
+      <li><strong>We parse them.</strong> Every round is broken down into positions, utility,
+        economy, and the outcome.</li>
+      <li><strong>Review and prepare.</strong> Watch rounds, read the scouting report, and go
+        into your next match knowing what's coming.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Data &amp; privacy</h2>
+    <p style="color:var(--muted);max-width:65ch;margin:0">
+      Raw demo files are deleted after 30 days; we keep only the derived round statistics your
+      team needs for review. Your team's data is visible only to your team. We never sell
+      individual player data.
+    </p>
+  </section>
+</main>
+
+<footer class="wrap">
+  Retake is an independent project by Boxel ·
+  <a href="mailto:boxelucs@gmail.com">boxelucs@gmail.com</a>
+  <div class="fine">
+    Not affiliated with or endorsed by Valve Corporation or FACEIT. Counter-Strike is a trademark of Valve Corporation.
+  </div>
+</footer>
+</body>
+</html>
