@@ -73,6 +73,24 @@ section.block { padding: 136px 0 0; }
 .tile img { display: block; width: calc(100% - 48px); height: auto; margin: auto 24px 0; border-radius: 14px 14px 0 0; border: 1px solid var(--line); border-bottom: 0; }
 .tile-wide img { width: calc(100% - 96px); margin: auto 48px 0; }
 
+/* text cards: the features without a screen of their own */
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 20px; }
+.card { background: var(--tile); border-radius: 28px; padding: 34px 32px; }
+.card h3 { margin: 0; font-size: 24px; line-height: 1.15; letter-spacing: -0.02em; font-weight: 700; }
+.card p:not(.kicker) { margin: 10px 0 0; color: var(--muted); font-size: 17px; }
+.sub-head { text-align: center; font-size: clamp(26px, 3vw, 34px); letter-spacing: -0.02em; font-weight: 700; margin: 72px 0 24px; }
+
+/* plans */
+.plans { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr)); gap: 20px; }
+.plan { background: var(--tile); border-radius: 28px; padding: 32px 28px; display: flex; flex-direction: column; }
+.plan.featured { box-shadow: inset 0 0 0 1.5px var(--link); }
+.plan h3 { margin: 0; font-size: 21px; font-weight: 600; }
+.plan .price { margin: 8px 0 0; font-size: 40px; font-weight: 700; letter-spacing: -0.03em; line-height: 1.1; }
+.plan .price small { font-size: 17px; font-weight: 500; color: var(--muted); letter-spacing: 0; }
+.plan .who { margin: 6px 0 0; color: var(--muted); font-size: 15px; }
+.plan ul { margin: 18px 0 0; padding: 0 0 0 18px; color: #d2d2d7; font-size: 15px; display: grid; gap: 6px; }
+.plans-more { text-align: center; margin-top: 30px; font-size: 19px; }
+
 /* numbers */
 .numbers { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); gap: 40px 24px; text-align: center; }
 .numbers b { display: block; font-size: clamp(44px, 5vw, 60px); font-weight: 700; letter-spacing: -0.035em; line-height: 1.05; }
@@ -122,6 +140,7 @@ footer a { color: #d2d2d7; }
 <nav class="nav-links" aria-label="Main">
 <a class="hide-sm" href="#features">Features</a>
 <a class="hide-sm" href="#scouting">Scouting</a>
+<a class="hide-sm" href="#pricing">Pricing</a>
 <a class="hide-sm" href="privacy.html">Privacy</a>
 <a href="https://app.retakehq.com/login" data-app hidden>Sign in</a>
 <a class="pill pill-sm" href="mailto:hello@retakehq.com?subject=RetakeHQ%20beta" data-app-text="Get started">Join the beta</a>
@@ -139,6 +158,7 @@ footer a { color: #d2d2d7; }
 <a class="more" href="#features">See how it works</a>
 </div>
 <p class="fine" data-beta-only>PRIVATE BETA · LAUNCHING FOR TEAMS SOON</p>
+<p class="fine" data-live-only hidden>FREE TO START · SIGN IN WITH STEAM</p>
 </section>
 
 <section id="product" class="product reveal">
@@ -285,6 +305,28 @@ footer a { color: #d2d2d7; }
 </div>
 </section>
 
+<section class="block" id="more">
+<div class="wrap">
+<div class="head reveal">
+<h2>After the match.<br>Before the next one.</h2>
+<p>What each player can fix on their own, and what the team needs the night before it plays.</p>
+</div>
+<div class="cards">
+<article class="card reveal"><p class="kicker">Drills</p><h3>Practice from your own mistakes.</h3><p>The pro lineup for a grenade of yours that did nothing, a setpos for the angle you kept dying to, and the aim number to work on, with the pro target.</p></article>
+<article class="card reveal"><p class="kicker">Clutches</p><h3>Save, or play it?</h3><p>Every 1-vs-many you were left in, next to what pros do in the same situation with the same time left.</p></article>
+<article class="card reveal"><p class="kicker">Utility</p><h3>The grenades that did nothing.</h3><p>Flashes that blinded no one, mollies that held back no one, smokes nobody came near, and how often pros waste theirs.</p></article>
+</div>
+<p class="sub-head reveal">For your next opponent</p>
+<div class="cards">
+<article class="card reveal"><p class="kicker">Scouting</p><h3>Their AWPer, lurker and rotations.</h3><p>Where their AWPer sets up next to pro AWPers, where the lurker goes, how fast help reaches a hit site, and a game plan against their T side.</p></article>
+<article class="card reveal"><p class="kicker">Prep</p><h3>The brief, built for you.</h3><p>Name the opponent and the format: a pick/ban call from both teams' records, then how to beat them on each map you'll likely play.</p></article>
+<article class="card reveal"><p class="kicker">Strat board</p><h3>Draw it, then share it.</h3><p>Plays drawn on the radar step by step, or started from a real round that worked, sent to the team by link.</p></article>
+<article class="card reveal"><p class="kicker">Compare</p><h3>What changed?</h3><p>Two matches side by side, a loss next to a win, with the biggest swings between them listed first.</p></article>
+<article class="card reveal"><p class="kicker">Share</p><h3>One link for the whole roster.</h3><p>A read-only scouting report anyone on the team can open, no account needed.</p></article>
+</div>
+</div>
+</section>
+
 <section class="block">
 <div class="wrap">
 <div class="head reveal"><h2>Built on real matches.</h2><p>Every number in RetakeHQ comes from parsed demos, and every pro comparison from these.</p></div>
@@ -353,6 +395,23 @@ footer a { color: #d2d2d7; }
 </div>
 </section>
 
+<section class="block" id="pricing">
+<div class="wrap">
+<div class="head reveal"><h2>Free to start.</h2><p>Pro matches and one of your own demos a day, free. Pay monthly when you want more, and cancel any time.</p></div>
+<div class="plans reveal">
+<article class="plan"><h3>Free</h3><p class="price">$0</p><p class="who">Try it on pro matches and your own games.</p>
+<ul><li>Curated pro matches from top events</li><li>1 demo upload a day, kept 7 days</li><li>2D replay with live win %</li><li>Full match analysis and coaching tips</li></ul></article>
+<article class="plan"><h3>Player</h3><p class="price">$7<small> /month</small></p><p class="who">For one player reviewing their own matches.</p>
+<ul><li>Unlimited uploads</li><li>Follow any pro and compare yourself</li><li>Drills, clutch decisions, wasted utility</li><li>AI coach (beta): about 28 reviews a month</li><li>Desktop app</li></ul></article>
+<article class="plan featured"><h3>Team</h3><p class="price">$29<small> /month</small></p><p class="who">For a roster: five players and a coach.</p>
+<ul><li>Everything in Player, 6 seats</li><li>Opponent scouting across the pro library</li><li>Next-match prep and the Strat board</li><li>Compare two matches</li><li>AI coach (beta): about 80 reviews a month, shared</li></ul></article>
+<article class="plan"><h3>Org</h3><p class="price">$79<small> /month</small></p><p class="who">For academies and multi-roster organizations.</p>
+<ul><li>Everything in Team</li><li>15 seats, up to 3 rosters</li><li>AI coach (beta): about 220 reviews a month</li><li>Priority import and support</li></ul></article>
+</div>
+<p class="plans-more"><a class="more" href="https://app.retakehq.com/pricing">Every plan in full</a></p>
+</div>
+</section>
+
 <section class="block" id="review">
 <div class="wrap">
 <div class="head reveal" style="margin-bottom: 28px"><p style="margin: 0; color: var(--muted); font-size: 21px; font-weight: 600">From a real review</p></div>
@@ -372,19 +431,20 @@ footer a { color: #d2d2d7; }
 <p style="margin: 0">The desktop app runs on your own PC: your demos and analysis stay on your computer.</p>
 <p style="margin: 0">Pro teams, players and numbers shown are from public pro matches, for illustration; they don't endorse RetakeHQ.</p>
 <p style="margin: 0">RetakeHQ is an independent project by Boxel. Not affiliated with or endorsed by Valve Corporation or FACEIT; Counter-Strike is a trademark of Valve Corporation.</p>
-<nav aria-label="Footer"><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:hello@retakehq.com">hello@retakehq.com</a></nav>
+<nav aria-label="Footer"><a href="https://app.retakehq.com/pricing">Pricing</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="mailto:hello@retakehq.com">hello@retakehq.com</a></nav>
 </div>
 </footer>
 
 <script>
 // The web version's address. Empty while it isn't online: "Sign in" stays hidden, so nobody
 // lands on a dead page. Set it (e.g. "https://app.retakehq.com") the day it goes live.
-const APP_URL = "";
+const APP_URL = "https://app.retakehq.com";
 if (APP_URL) {
   for (const a of document.querySelectorAll("[data-app]")) { a.href = APP_URL + "/login"; a.hidden = false; }
   // "Join the beta" (an email) becomes the way in: Steam sign-in, free
   for (const a of document.querySelectorAll("[data-app-text]")) { a.href = APP_URL + "/login"; a.textContent = a.dataset.appText; }
   for (const el of document.querySelectorAll("[data-beta-only]")) el.hidden = true;
+  for (const el of document.querySelectorAll("[data-live-only]")) el.hidden = false;
 }
 // fade sections in as they scroll into view (styles only apply when motion is welcome)
 const io = "IntersectionObserver" in window && new IntersectionObserver(entries => {

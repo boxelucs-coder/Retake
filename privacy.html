@@ -19,11 +19,16 @@
   h1 { font-size: 2rem; letter-spacing: -0.02em; margin: 32px 0 4px; }
   .updated { color: var(--muted); font-size: .9rem; margin: 0 0 32px; }
   h2 { font-size: 1.15rem; margin: 36px 0 8px; }
+  h3 { font-size: 1rem; margin: 22px 0 4px; }
   p, li { color: #c9ced5; }
   ul { padding-left: 20px; }
   a { color: var(--accent); }
   .summary { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 22px; }
-  .summary p { margin: 0; }
+  .summary p { margin: 0 0 8px; }
+  .summary p:last-child { margin: 0; }
+  table { width: 100%; border-collapse: collapse; font-size: .95rem; margin: 8px 0; }
+  th, td { text-align: left; padding: 8px 10px; border-top: 1px solid var(--border); color: #c9ced5; vertical-align: top; }
+  th { color: var(--text); font-weight: 600; border-top: none; }
   footer { margin-top: 56px; padding: 32px 0 48px; border-top: 1px solid var(--border); color: var(--muted); font-size: .85rem; }
   footer a { color: var(--muted); }
 </style>
@@ -33,86 +38,152 @@
 
 <main class="wrap">
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: September 26, 2026</p>
+  <p class="updated">Last updated: October 4, 2026</p>
 
   <div class="summary">
-    <p><strong>Short version:</strong> RetakeHQ runs on your own computer. Your demos, match data and
-    analysis stay there — we never receive them. The only things that leave your computer are your
-    license key (to check your subscription) and, if you turn it on, requests to FACEIT for your
-    own match history.</p>
+    <p><strong>Short version.</strong> You sign in with Steam; we get your public SteamID, name and avatar,
+    never your password. Demos you upload are stored on our server and analysed there, visible only to your
+    team. Raw demo files are deleted within days; the analysed data is kept while your plan allows (7 days on
+    the free plan, while you subscribe on paid plans).</p>
+    <p>If you use AI reviews or match chat (paid plans), the analysis of that match is sent to Anthropic to
+    write the text. The desktop app keeps everything on your computer and only checks your subscription with
+    us. We don't sell data, show ads, or use tracking or analytics cookies.</p>
   </div>
 
   <h2>Who we are</h2>
-  <p>RetakeHQ is an independent software project. "We", "us" and "our" mean the developer of
-  RetakeHQ. You can reach us at <a href="mailto:hello@retakehq.com">hello@retakehq.com</a>.</p>
+  <p>RetakeHQ is an independent software project run from West Virginia, USA. "We", "us" and "our" mean the
+  developer of RetakeHQ. Contact: <a href="mailto:hello@retakehq.com">hello@retakehq.com</a>.</p>
+  <p>RetakeHQ comes in two forms: the <strong>web app</strong> (you use it in your browser; your team's data is
+  stored on our server) and the <strong>desktop app</strong> (included with paid plans; your data is stored on your
+  own computer). This policy covers both, plus this website.</p>
 
-  <h2>The RetakeHQ app</h2>
-  <p>RetakeHQ is a desktop application. The demo files you add, the data parsed from them
-  (player positions, rounds, utility, economy), your notes and flagged rounds, and all analysis
-  are stored in a local database on your computer. We don't operate a server that receives any of
-  it, and the app contains no analytics, tracking or advertising.</p>
-  <p>The app connects to the internet only for:</p>
+  <h2>1. Your account (Steam sign-in)</h2>
+  <p>You sign in on Steam's own website. Steam tells us your <strong>SteamID</strong> (a public number
+  identifying your Steam account). We then look up your public Steam <strong>profile name and avatar</strong> to
+  show them in the app. We never see or store your Steam password.</p>
+  <p>We keep: your SteamID, name and avatar, when you joined and last signed in, your team and role, and your
+  active sign-ins (each with the date and a device description such as "Firefox on Windows" so you can sign
+  out other devices; we don't log your IP address against your account).</p>
+
+  <h2>2. Demos you upload (web app)</h2>
+  <p>A demo is a recording of a Counter-Strike match. When your team uploads one, we store the file and
+  analyse it: rounds, positions, kills, damage, grenades, economy and so on. <strong>Demos contain the in-game
+  names and SteamIDs of everyone in the match</strong>, including opponents; that information is part of the
+  analysed data.</p>
   <ul>
-    <li><strong>License checks.</strong> When you activate, and periodically after that, the app sends
-      your license key and your computer's name to our payment provider, Lemon Squeezy, to confirm
-      your subscription is active. The computer name lets you see and manage which PCs use your
-      license.</li>
-    <li><strong>FACEIT match import (optional).</strong> If you set up FACEIT import, the app asks
-      FACEIT's API for the match history of the FACEIT nicknames you enter and downloads those
-      matches' demos from FACEIT. Those requests go directly from your computer to FACEIT and are
-      covered by <a href="https://www.faceit.com/en/privacy" rel="noopener">FACEIT's privacy policy</a>.</li>
+    <li><strong>Who sees it:</strong> your uploads, their analysis, and your team's notes, comments and drawings
+      are visible only to members of your team (and to us, to run and support the service). Professional
+      matches we add ourselves are visible to everyone. Features that compare matches (scouting, stacked rounds,
+      round search and "rounds like this one") only draw on those professional matches and your own team's
+      uploads, never on another team's.</li>
+    <li><strong>How long we keep it:</strong>
+      <table>
+        <tr><th>What</th><th>How long</th></tr>
+        <tr><td>The raw demo file</td><td>Deleted 3 days after it's analysed (7 days if analysis failed, so it can be retried)</td></tr>
+        <tr><td>Analysed data, free plan</td><td>Deleted 7 days after upload</td></tr>
+        <tr><td>Analysed data, paid plans</td><td>Kept while your team subscribes</td></tr>
+        <tr><td>After a paid subscription ends</td><td>Kept, read-only, for 90 days; after that the free plan's rule applies</td></tr>
+        <tr><td>Notes, comments, drawings</td><td>Deleted with the match they belong to, or when you delete them</td></tr>
+      </table></li>
+    <li><strong>Used, anonymised, to improve RetakeHQ</strong> (unless your team turns on private mode):
+      we keep a copy of the match data parsed from your uploads (positions, kills, damage, grenades, economy,
+      round results) with every player name, SteamID and team name replaced by a random code, and without
+      the demo file, your notes, comments, drawings or AI chats. We use these copies only inside RetakeHQ, to
+      train and check our models -- for example to make win chances more accurate for matches like yours, and
+      to compare a player with others at a similar level. They are never shown to another team, published,
+      sold, or used to rebuild a particular match for anyone.</li>
+    <li><strong>Comparisons with pros stay pro-only:</strong> every "pros on this map do X" number is learned
+      only from the professional matches we add ourselves; uploads never become part of it.</li>
+    <li><strong>How long the training copy is kept:</strong> up to 24 months from upload, even after
+      your team's own copy of the match is deleted. Because it carries no names or IDs, we can't link it back to
+      you or your team. A model already trained keeps what it learned in general, but not your matches.</li>
+    <li><strong>We never publish or sell</strong> your demos, your team's data, or anything that identifies you
+      or your team.</li>
   </ul>
-  <p>Demos contain in-game names and Steam IDs of the players in each match. That information stays
-  on your computer with the rest of the demo data.</p>
 
-  <h2>Purchases</h2>
-  <p>Subscriptions are sold through <a href="https://www.lemonsqueezy.com" rel="noopener">Lemon Squeezy</a>,
-  which acts as the merchant of record: it processes your payment, handles sales tax, and sends your
-  receipts. Lemon Squeezy shares with us your name, email address, country, and order and
-  subscription details so we can provide your license and support. We never see or store your card
-  or bank details. Lemon Squeezy's handling of your information is covered by
-  <a href="https://www.lemonsqueezy.com/privacy" rel="noopener">its privacy policy</a>.</p>
+  <h2>3. AI reviews and chat</h2>
+  <p>On paid plans, RetakeHQ can write a coach-style review of a player's match, answer questions about a
+  match, about an opponent's scouting report or about Counter-Strike in general ("Ask the coach"), and read a
+  round search our own rules can't. To do that we send the <strong>analysis involved</strong> (for a match:
+  player names, rounds, kills, positions, stats and the patterns we found; for an opponent: the scouting report
+  you're looking at; for a general question: your question and what the professional matches show; for a
+  search: its words and the team names in those matches; never a raw demo file) to
+  <a href="https://www.anthropic.com" rel="noopener">Anthropic</a>, whose Claude models write the text. Anthropic
+  processes it under its commercial terms, which do not allow it to train its models on this data; see
+  <a href="https://www.anthropic.com/legal/privacy" rel="noopener">Anthropic's privacy policy</a>. Reviews we write
+  are saved with the match so they're only generated once. On the showcase pro matches, reviews are written by
+  us in advance and shown to everyone.</p>
+  <p><strong>Questions and answers are saved</strong> with your team: the question, the answer, who on the team
+  asked it, and a note if you mark an answer as wrong. We read answers marked wrong, and a sample of others, to
+  find and fix mistakes in how RetakeHQ answers; never to train a model. They're deleted with the match they're
+  about, when your team is deleted, and your name comes off them if you leave the team or delete your account.</p>
+  <p>If you'd rather not have a match sent for AI review, simply don't use those buttons or the chat; nothing is sent
+  automatically except that a paid team member's own review of a demo they upload is written when it's analysed.</p>
 
-  <h2>This website</h2>
-  <p>retakehq.com has no cookies, analytics or tracking. It is hosted on GitHub Pages and uses
-  Google Fonts; like any web host, these services receive your IP address and browser information
-  when you load the page. See <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">GitHub's</a>
-  and <a href="https://policies.google.com/privacy" rel="noopener">Google's</a> privacy policies.</p>
+  <h2>4. The desktop app</h2>
+  <p>The desktop app analyses demos on your own computer. Your demos, analysis, notes and settings are stored
+  there; we never receive them. The app connects to us only to <strong>check that your subscription is
+  active</strong>: it signs in to your RetakeHQ account and sends a token for this computer and its
+  name (so you can see which computers use your account). It keeps working offline for up to 7 days
+  between checks. If you set up FACEIT import, the app talks directly to FACEIT for your match history and
+  demos, under <a href="https://www.faceit.com/en/privacy" rel="noopener">FACEIT's privacy policy</a>.</p>
 
-  <h2>Email</h2>
-  <p>If you email us, we keep your message and email address so we can reply and help you. We don't
-  add you to mailing lists or send marketing email without asking.</p>
+  <h2>5. Payments</h2>
+  <p>Subscriptions are sold through <a href="https://www.lemonsqueezy.com" rel="noopener">Lemon Squeezy</a>, the
+  merchant of record: it takes your payment, handles sales tax and sends receipts. It shares with us your name,
+  email address, country and subscription details so we can apply your plan and help you. We never see your
+  card or bank details. See <a href="https://www.lemonsqueezy.com/privacy" rel="noopener">Lemon Squeezy's privacy policy</a>.</p>
 
-  <h2>How we use information</h2>
-  <p>Only to provide your license, give support, handle billing questions, and meet legal
-  obligations (for example, tax records). We don't sell or rent personal information, and we don't
-  share it except with the service providers named above or when required by law.</p>
+  <h2>6. Cookies</h2>
+  <p>The web app uses only cookies it needs to work: one that keeps you signed in, and a short-lived one that
+  remembers where to send you after signing in (for example, a team invite link). No analytics, advertising or
+  tracking cookies. This website (retakehq.com's information pages) uses no cookies.</p>
 
-  <h2>How long we keep it</h2>
-  <p>Order and license records are kept as long as your subscription is active and afterwards for as
-  long as tax and accounting rules require. Support emails are kept while they're useful for
-  helping you. Data inside the app is on your computer, so you control it: uninstalling the app
-  and choosing to remove its data deletes all of it.</p>
+  <h2>7. Where data is stored and who helps us</h2>
+  <ul>
+    <li><strong>Contabo GmbH</strong> runs the server that stores the web app's data, in Germany.</li>
+    <li><strong>Anthropic</strong> writes AI reviews and chat answers (section 3).</li>
+    <li><strong>Lemon Squeezy</strong> handles payments (section 5).</li>
+    <li><strong>Steam (Valve)</strong> handles sign-in and provides public profile names and avatars.</li>
+    <li><strong>Leetify</strong>: when you open a player's card, we look up that player's public Leetify profile
+      by their SteamID (a public number) to show their Leetify ratings. Leetify only returns profiles its players
+      have left public (<a href="https://leetify.com" rel="noopener">leetify.com</a>).</li>
+    <li><strong>GitHub Pages and Google Fonts</strong> serve this website; like any host they receive your IP
+      address and browser details when you load a page.</li>
+  </ul>
+  <p>We use them only to provide RetakeHQ. We don't sell or rent personal information, and we don't share it
+  except with these providers or when the law requires it. If you're outside the US, your data may be
+  processed in the US or the other countries these providers operate in.</p>
 
-  <h2>Your choices and rights</h2>
-  <p>You can ask us what personal information we hold about you, and ask us to correct or delete it,
-  by emailing <a href="mailto:hello@retakehq.com">hello@retakehq.com</a>. Depending on where you live
-  (for example, the EU, UK or California) you may have additional rights, and we'll honor requests
-  made under those laws.</p>
+  <h2>8. Security</h2>
+  <p>Traffic to the web app is encrypted (HTTPS). Sign-in tokens are stored only as secure hashes, demo files
+  are stored under random-looking names, and each team's data is kept separate. We back the database up
+  regularly. No system is perfectly secure; if we ever learn of a breach affecting your data, we'll tell you.</p>
 
-  <h2>Children</h2>
-  <p>RetakeHQ isn't directed at children under 13, and we don't knowingly collect personal
-  information from them. If you believe a child has given us personal information, email us and
-  we'll delete it.</p>
+  <h2>9. Your choices and rights</h2>
+  <ul>
+    <li>Delete your notes, comments and uploads' analysis from your team at any time.</li>
+    <li>Delete your account yourself on your account page. That removes your profile, sign-ins, linked
+      computers and AI reviews of your play; if you're the only member of your team, it also removes the team's
+      uploads and notes, otherwise the team keeps them. (A team with an active subscription must cancel it first.)</li>
+    <li>Ask us for a copy of the personal data we hold about you, or to correct it, at
+      <a href="mailto:hello@retakehq.com">hello@retakehq.com</a>.</li>
+    <li><strong>Private mode:</strong> a team owner can turn it on in the account page. From then on, the team's
+      uploads are never copied for training, and the training copies already made from the team's uploads are
+      deleted before our next training run.</li>
+    <li>If you appear in a demo someone else uploaded and want your data removed from our analysis, email us
+      and we'll take care of it.</li>
+    <li>Depending on where you live (for example the EU, UK or California) you may have further rights; we'll
+      honour requests made under those laws.</li>
+  </ul>
 
-  <h2>Future online features</h2>
-  <p>If we add online features — for example, a hosted version that stores your team's data on our
-  servers — we'll update this policy to describe exactly what's stored and why before those features
-  launch.</p>
+  <h2>10. Children</h2>
+  <p>RetakeHQ isn't meant for children under 13, and we don't knowingly collect their personal information. If
+  you believe a child under 13 has an account, email us and we'll delete it.</p>
 
-  <h2>Changes</h2>
-  <p>If we change this policy, we'll update the date at the top. For significant changes we'll also
-  let subscribers know by email.</p>
+  <h2>11. Changes</h2>
+  <p>If we change this policy we'll update the date at the top; for significant changes we'll also let
+  signed-in users and subscribers know before they take effect.</p>
 </main>
 
 <footer class="wrap">
